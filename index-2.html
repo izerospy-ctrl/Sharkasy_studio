@@ -1,0 +1,447 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SHARKASY STUDIO | استوديو الشركسي</title>
+<meta name="description" content="استوديو الشركسي - تصوير فوري وتصوير عادي وبراويز وعروض لفترة محدودة">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+<style>
+:root{
+  --bg:#050505; --card:#0d0d0d; --card2:#111;
+  --gold:#d9a441; --gold2:#f1c45b; --white:#fff;
+  --muted:#aaa; --red:#d62828; --border:rgba(217,164,65,.32);
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:Cairo,sans-serif;background:var(--bg);color:var(--white);line-height:1.7}
+a{text-decoration:none;color:inherit}
+header{position:fixed;top:0;right:0;left:0;height:76px;background:rgba(5,5,5,.94);backdrop-filter:blur(12px);border-bottom:1px solid var(--border);z-index:1000}
+.header{max-width:1400px;height:100%;margin:auto;padding:0 22px;display:flex;align-items:center;justify-content:space-between}
+.logo{display:flex;align-items:center;gap:10px}
+.logoIcon{width:46px;height:46px;border:2px solid var(--gold);border-radius:12px;display:grid;place-items:center;font-size:23px}
+.logoEn{color:var(--gold);font-size:21px;font-weight:900;letter-spacing:1px}
+.logoStudio{font-size:9px;letter-spacing:5px;display:block;text-align:center;margin-top:-5px}
+.logoAr{font-size:12px;display:block}
+nav{display:flex;gap:28px}
+nav a{font-size:14px;color:#eee;transition:.25s}
+nav a:hover{color:var(--gold)}
+.menu{display:none;background:none;color:var(--gold);border:1px solid var(--gold);border-radius:10px;width:44px;height:44px;font-size:21px}
+
+.hero{padding-top:76px;min-height:650px;display:grid;place-items:center;background:radial-gradient(circle at 65% 40%,rgba(217,164,65,.08),transparent 32%)}
+.heroInner{max-width:1400px;width:100%;padding:70px 28px;display:grid;grid-template-columns:1fr 1fr;gap:45px;align-items:center}
+.heroText{text-align:right}
+.eyebrow{color:var(--gold);font-weight:800;margin-bottom:8px}
+h1{font-size:clamp(44px,6vw,76px);line-height:1.15;font-weight:900}
+h1 span{color:var(--gold)}
+.heroText p{color:var(--muted);font-size:18px;margin:16px 0 28px;max-width:600px}
+.actions{display:flex;gap:10px;flex-wrap:wrap}
+.btn{padding:12px 21px;border:1px solid var(--gold);border-radius:10px;transition:.25s;font-weight:800}
+.btn:hover,.btn.primary{background:var(--gold);color:#000}
+.camera{min-height:350px;display:grid;place-items:center}
+.cameraBox{width:min(450px,100%);height:285px;border:1px solid var(--border);border-radius:28px;background:linear-gradient(145deg,#121212,#060606);display:grid;place-items:center;box-shadow:0 0 70px rgba(217,164,65,.08)}
+.cameraIcon{font-size:145px;filter:drop-shadow(0 0 25px rgba(217,164,65,.2))}
+
+.section{max-width:1400px;margin:auto;padding:65px 24px}
+.title{text-align:center;margin-bottom:36px}
+.title h2{font-size:35px;font-weight:900}
+.title h2 span{color:var(--gold)}
+.title p{color:var(--muted);margin-top:5px}
+.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.card{background:linear-gradient(145deg,#111,#080808);border:1px solid var(--border);border-radius:20px;padding:24px;transition:.3s}
+.card:hover{transform:translateY(-4px);border-color:var(--gold)}
+.cardHead{display:flex;align-items:center;gap:12px;margin-bottom:15px}
+.icon{width:52px;height:52px;border:1px solid var(--gold);border-radius:14px;display:grid;place-items:center;color:var(--gold);font-size:24px}
+.card h3{font-size:23px}
+.offer{display:inline-block;background:var(--red);border-radius:30px;padding:4px 12px;font-size:12px;font-weight:800;margin-bottom:18px}
+.center{text-align:center}
+.count{font-size:20px;font-weight:800;margin:12px 0}
+.count span{color:var(--gold)}
+.avail{color:var(--muted);font-size:13px;border-block:1px solid rgba(255,255,255,.08);padding:9px;margin-bottom:18px}
+.price{border:1px solid var(--border);border-radius:14px;padding:14px;text-align:center}
+.old{text-decoration:line-through;color:#888;font-size:16px}
+.new{font-size:49px;line-height:1;color:var(--gold);font-weight:900}
+.currency{font-size:13px;color:var(--gold);font-weight:800}
+.addTitle{text-align:center;font-weight:800;margin:18px 0 8px}
+.add{display:flex;justify-content:space-between;padding:9px 8px;border-bottom:1px solid rgba(255,255,255,.07);color:var(--muted)}
+.add:last-child{border-bottom:0}
+.add strong{color:var(--gold)}
+.order{display:block;text-align:center;background:var(--gold);color:#000;border-radius:10px;padding:11px;margin-top:17px;font-weight:900}
+.order:hover{background:var(--gold2)}
+
+table{width:100%;border-collapse:collapse}
+th,td{text-align:center;padding:12px 7px;border-bottom:1px solid rgba(255,255,255,.08)}
+th{color:var(--gold);font-size:13px}
+.oldFrame{text-decoration:line-through;color:#888}
+.newFrame{color:var(--gold);font-weight:900;font-size:17px}
+.frameOffer{text-align:center;border:1px solid rgba(61,155,69,.7);color:#7bd17f;border-radius:30px;padding:9px;margin-top:23px;font-weight:800}
+
+.coming{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.comingCard{min-height:220px;border:1px solid var(--border);border-radius:20px;background:#0b0b0b;display:grid;place-items:center;align-content:center;text-align:center;position:relative;overflow:hidden}
+.comingCard:before{content:"?";position:absolute;font-size:190px;font-weight:900;color:rgba(255,255,255,.025);top:15px}
+.q{width:72px;height:72px;border:2px solid var(--gold);border-radius:50%;display:grid;place-items:center;color:var(--gold);font-size:34px;z-index:1}
+.cs{color:var(--gold);font-size:12px;font-weight:900;letter-spacing:2px;z-index:1;margin-top:10px}
+.comingCard h3,.soonSub{z-index:1}
+.soonSub{color:var(--muted);font-size:13px}
+
+.features{display:grid;grid-template-columns:repeat(4,1fr);border:1px solid var(--border);border-radius:18px;overflow:hidden;background:#090909}
+.feature{text-align:center;padding:22px 12px;border-left:1px solid rgba(255,255,255,.08)}
+.feature:last-child{border-left:0}
+.featureIcon{color:var(--gold);font-size:27px}
+.feature h4{font-size:15px}
+.feature p{color:var(--muted);font-size:11px}
+
+footer{margin-top:45px;border-top:1px solid var(--border);background:#030303}
+.footer{max-width:1400px;margin:auto;padding:50px 24px 20px;display:grid;grid-template-columns:repeat(4,1fr);gap:30px}
+.footer h3{color:var(--gold);margin-bottom:15px}
+.brand{font-size:29px;font-weight:900;color:var(--gold)}
+.brand span{display:block;color:#fff;font-size:11px;letter-spacing:5px}
+.desc{color:var(--muted);font-size:13px;margin-top:8px}
+.contact{display:block;color:var(--muted);margin-bottom:10px;font-size:14px}
+.contact:hover{color:var(--gold)}
+.bottom{max-width:1400px;margin:auto;border-top:1px solid rgba(255,255,255,.07);padding:17px 24px;text-align:center;color:var(--gold);font-weight:800}
+.whatsapp{position:fixed;bottom:20px;left:20px;width:57px;height:57px;border-radius:50%;background:#25D366;display:grid;place-items:center;font-size:25px;z-index:999;box-shadow:0 5px 25px #000}
+
+@media(max-width:1000px){
+  nav{gap:15px} nav a{font-size:12px}
+  .heroInner{grid-template-columns:1fr;text-align:center}
+  .heroText{text-align:center}.heroText p{margin-inline:auto}
+  .actions{justify-content:center}.camera{order:-1}
+  .grid{grid-template-columns:1fr 1fr}.coming{grid-template-columns:1fr 1fr}
+  .features{grid-template-columns:1fr 1fr}.footer{grid-template-columns:1fr 1fr}
+}
+@media(max-width:700px){
+  header{height:68px}.menu{display:block}
+  nav{position:fixed;top:68px;right:-100%;width:80%;height:calc(100vh - 68px);background:#080808;border-left:1px solid var(--border);padding:30px;display:flex;flex-direction:column;align-items:flex-start;gap:22px;transition:.3s}
+  nav.active{right:0}nav a{font-size:16px}
+  .hero{padding-top:68px}.heroInner{padding:45px 16px}
+  h1{font-size:42px}.heroText p{font-size:15px}.cameraBox{height:240px}.cameraIcon{font-size:110px}
+  .grid,.coming,.features,.footer{grid-template-columns:1fr}
+  .feature{border-left:0;border-bottom:1px solid rgba(255,255,255,.08)}
+  .footer{text-align:center}.contact{text-align:center}
+}
+
+/* ===== CLIENT ACCESS LOCK ===== */
+body.locked{overflow:hidden}
+body.locked > *:not(#accessGate){filter:blur(10px);pointer-events:none;user-select:none}
+#accessGate{position:fixed;inset:0;background:radial-gradient(circle at 50% 20%,rgba(217,164,65,.14),transparent 38%),rgba(3,3,3,.97);display:flex;align-items:center;justify-content:center;padding:20px;z-index:99999;transition:.35s}
+#accessGate.hidden{opacity:0;visibility:hidden;pointer-events:none}
+.accessBox{width:min(470px,100%);background:linear-gradient(145deg,#151515,#080808);border:1px solid var(--border);border-radius:26px;padding:32px 25px;text-align:center;box-shadow:0 25px 90px rgba(0,0,0,.65),0 0 70px rgba(217,164,65,.08)}
+.lockIcon{width:78px;height:78px;margin:0 auto 17px;border:2px solid var(--gold);border-radius:22px;display:grid;place-items:center;font-size:34px;box-shadow:0 0 35px rgba(217,164,65,.12)}
+.accessBox h2{font-size:28px;font-weight:900;margin-bottom:7px}
+.accessBox h2 span{color:var(--gold)}
+.accessLead{color:var(--muted);font-size:14px;line-height:1.9;margin-bottom:22px}
+.requestBtn,.codeBtn{width:100%;border:0;border-radius:12px;padding:13px 16px;font-family:inherit;font-size:15px;font-weight:900;cursor:pointer;transition:.25s}
+.requestBtn{background:var(--gold);color:#000}
+.requestBtn:hover{background:var(--gold2);transform:translateY(-2px)}
+.codeBtn{margin-top:10px;background:transparent;color:var(--white);border:1px solid var(--border)}
+.codeBtn:hover{border-color:var(--gold);color:var(--gold)}
+.codeArea{display:none;margin-top:17px;text-align:right}
+.codeArea.show{display:block}
+.codeArea label{display:block;color:#ddd;font-size:13px;margin-bottom:7px}
+#accessCode{width:100%;padding:13px;border-radius:11px;border:1px solid rgba(255,255,255,.12);background:#050505;color:#fff;font-family:inherit;text-align:center;font-size:18px;letter-spacing:3px;outline:none}
+#accessCode:focus{border-color:var(--gold)}
+.unlockBtn{width:100%;margin-top:10px;padding:12px;border:0;border-radius:11px;background:#222;color:#fff;font-family:inherit;font-weight:900;cursor:pointer}
+.unlockBtn:hover{background:var(--gold);color:#000}
+.accessMsg{min-height:25px;margin-top:10px;text-align:center;font-size:12px;color:#ff7777}
+.accessNote{margin-top:19px;padding-top:14px;border-top:1px solid rgba(255,255,255,.07);color:#777;font-size:11px}
+.price.lockedPrice,.new.lockedPrice,.old.lockedPrice,.newFrame.lockedPrice,.oldFrame.lockedPrice{filter:blur(9px);user-select:none}
+@media(max-width:500px){.accessBox{padding:27px 18px}.accessBox h2{font-size:24px}}
+
+
+/* ===== ADMIN LOGIN ===== */
+#adminBtn{position:fixed;top:18px;left:18px;z-index:100001;border:1px solid var(--gold);background:rgba(10,10,10,.92);color:var(--gold);padding:9px 15px;border-radius:10px;font:900 12px Cairo,sans-serif;letter-spacing:1px;cursor:pointer;box-shadow:0 5px 25px rgba(0,0,0,.35);backdrop-filter:blur(8px);transition:.25s}
+#adminBtn:hover{background:var(--gold);color:#000;transform:translateY(-1px)}
+#adminModal{position:fixed;inset:0;z-index:100002;background:rgba(0,0,0,.82);backdrop-filter:blur(10px);display:none;align-items:center;justify-content:center;padding:20px}
+#adminModal.show{display:flex}
+.adminBox{width:min(430px,100%);background:linear-gradient(145deg,#171717,#080808);border:1px solid var(--border);border-radius:22px;padding:28px 22px;box-shadow:0 25px 90px rgba(0,0,0,.7),0 0 55px rgba(217,164,65,.08);position:relative;text-align:right}
+.adminClose{position:absolute;top:10px;left:12px;border:0;background:transparent;color:#aaa;font-size:24px;cursor:pointer}
+.adminBadge{width:58px;height:58px;margin:0 auto 12px;border:1px solid var(--gold);border-radius:17px;display:grid;place-items:center;font-size:27px}
+.adminBox h2{text-align:center;font-size:25px;margin-bottom:3px}.adminBox h2 span{color:var(--gold)}
+.adminSub{text-align:center;color:var(--muted);font-size:12px;margin-bottom:20px}
+.adminField{margin-bottom:13px}.adminField label{display:block;font-size:12px;color:#bbb;margin-bottom:6px}
+.adminField input{width:100%;padding:12px 13px;border:1px solid rgba(255,255,255,.1);border-radius:10px;background:#0d0d0d;color:#fff;font:600 14px Cairo,sans-serif;outline:none}
+.adminField input:focus{border-color:var(--gold)}
+.adminLogin{width:100%;padding:12px;border:0;border-radius:10px;background:var(--gold);color:#000;font:900 14px Cairo,sans-serif;cursor:pointer;margin-top:4px}.adminLogin:hover{background:var(--gold2)}
+.adminError{text-align:center;min-height:23px;color:#ff7777;font-size:12px;margin-top:9px}
+.adminHint{text-align:center;color:#666;font-size:10px;margin-top:12px}
+@media(max-width:500px){#adminBtn{top:12px;left:12px;padding:8px 12px}.adminBox{padding:25px 18px}}
+
+</style>
+</head>
+
+<body class="locked">
+
+
+<!-- ADMIN -->
+<button id="adminBtn" type="button">ADMIN</button>
+<div id="adminModal" role="dialog" aria-modal="true" aria-labelledby="adminTitle">
+  <div class="adminBox">
+    <button class="adminClose" id="adminClose" type="button" aria-label="إغلاق">×</button>
+    <div class="adminBadge">🛡️</div>
+    <h2 id="adminTitle"><span>ADMIN</span> LOGIN</h2>
+    <p class="adminSub">دخول إدارة استوديو الشركسي</p>
+    <div class="adminField">
+      <label for="adminUser">اسم المستخدم</label>
+      <input id="adminUser" type="text" autocomplete="username" placeholder="admin">
+    </div>
+    <div class="adminField">
+      <label for="adminPass">كلمة المرور</label>
+      <input id="adminPass" type="password" autocomplete="current-password" placeholder="••••••••">
+    </div>
+    <button class="adminLogin" id="adminLogin" type="button">دخول لوحة الإدارة</button>
+    <div class="adminError" id="adminError"></div>
+    <div class="adminHint">سيتم تجهيز لوحة التحكم والإدارة في الخطوة التالية.</div>
+  </div>
+</div>
+
+<!-- واجهة طلب الدخول: الأسعار لا تظهر للعميل قبل فتح الموقع -->
+<div id="accessGate" role="dialog" aria-modal="true" aria-labelledby="accessTitle">
+  <div class="accessBox">
+    <div class="lockIcon">🔐</div>
+    <h2 id="accessTitle">الدخول إلى <span>الأسعار</span></h2>
+    <p class="accessLead">مرحبًا بك في استوديو الشركسي.<br>للحفاظ على خصوصية أسعار الاستوديو، يلزم طلب السماح من الإدارة أولًا.</p>
+
+    <a class="requestBtn" href="https://wa.me/201060874372?text=السلام%20عليكم،%20أرغب%20في%20طلب%20السماح%20بالدخول%20وعرض%20أسعار%20استوديو%20الشركسي" target="_blank" rel="noopener">📩 طلب السماح بالدخول</a>
+    <button class="codeBtn" id="showCode">🔑 لدي كود الاستوديو</button>
+
+    <div class="codeArea" id="codeArea">
+      <label for="accessCode">أدخل كود الاستوديو</label>
+      <input id="accessCode" type="password" inputmode="text" autocomplete="off" placeholder="••••••••">
+      <button class="unlockBtn" id="unlockBtn">فتح الأسعار</button>
+      <div class="accessMsg" id="accessMsg"></div>
+    </div>
+
+    <div class="accessNote">الأسعار ستظل مخفية حتى يتم إدخال كود صحيح.</div>
+  </div>
+</div>
+
+<header>
+  <div class="header">
+    <a href="#home" class="logo">
+      <div class="logoIcon">📷</div>
+      <div>
+        <div class="logoEn">SHARKASY</div>
+        <span class="logoStudio">STUDIO</span>
+        <span class="logoAr">استوديو الشركسي</span>
+      </div>
+    </a>
+
+    <nav id="nav">
+      <a href="#home">الرئيسية</a>
+      <a href="#instant">التصوير الفوري</a>
+      <a href="#normal">التصوير العادي</a>
+      <a href="#frames">البراويز</a>
+      <a href="#coming">الخدمات القادمة</a>
+      <a href="#contact">تواصل معنا</a>
+    </nav>
+
+    <button class="menu" id="menu">☰</button>
+  </div>
+</header>
+
+<section class="hero" id="home">
+  <div class="heroInner">
+    <div class="heroText">
+      <div class="eyebrow">📸 SHARKASY STUDIO</div>
+      <h1>كل لحظة<br><span>تستاهل تتوثق</span></h1>
+      <p>تصوير احترافي بجودة عالية وأسعار مميزة مع عروض خاصة لفترة محدودة.</p>
+      <div class="actions">
+        <a class="btn primary" href="https://wa.me/201060874372" target="_blank">💬 واتساب</a>
+        <a class="btn" href="tel:01060874372">📞 اتصل بنا</a>
+        <a class="btn" href="https://maps.app.goo.gl/F2diXkmeuN9w2fE5A?g_st=aw" target="_blank">📍 موقعنا</a>
+      </div>
+    </div>
+    <div class="camera">
+      <div class="cameraBox"><div class="cameraIcon">📷</div></div>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="title">
+    <h2>خدماتنا <span>وأسعارنا</span></h2>
+    <p>اختار الخدمة المناسبة ليك</p>
+  </div>
+
+  <div class="grid">
+
+    <article class="card" id="instant">
+      <div class="cardHead"><div class="icon">📷</div><h3>التصوير الفوري</h3></div>
+      <div class="offer">🔥 عروض لفترة محدودة</div>
+      <div class="center count"><span>8 صور</span></div>
+      <div class="center avail">متاح أكثر من 8 صور<br>أو 4 صور فقط</div>
+      <div class="price"><div class="old lockedPrice">110 جنيه</div><div><span class="new lockedPrice">75</span> <span class="currency">جنيه</span></div></div>
+      <div class="addTitle">إضافات اختيارية</div>
+      <div class="add"><span>🪪 كرت إضافي</span><strong>+25 جنيه</strong></div>
+      <a class="order" href="https://wa.me/201060874372?text=السلام%20عليكم،%20أريد%20الاستفسار%20عن%20التصوير%20الفوري" target="_blank">اطلب الآن 🛒</a>
+    </article>
+
+    <article class="card" id="normal">
+      <div class="cardHead"><div class="icon">📷</div><h3>التصوير العادي</h3></div>
+      <div class="offer">🔥 عروض لفترة محدودة</div>
+      <div class="center count"><span>8 صور</span></div>
+      <div class="center avail">متاح أكثر من 8 صور<br>أو 4 صور فقط</div>
+      <div class="price"><div class="old lockedPrice">80 جنيه</div><div><span class="new lockedPrice">50</span> <span class="currency">جنيه</span></div></div>
+      <div class="addTitle">إضافات اختيارية</div>
+      <div class="add"><span>🪪 كرت إضافي</span><strong>+25 جنيه</strong></div>
+      <a class="order" href="https://wa.me/201060874372?text=السلام%20عليكم،%20أريد%20الاستفسار%20عن%20التصوير%20العادي" target="_blank">اطلب الآن 🛒</a>
+    </article>
+
+    <article class="card" id="frames">
+      <div class="cardHead"><div class="icon">🖼️</div><h3>البراويز</h3></div>
+      <div class="offer">🔥 عروض لفترة محدودة</div>
+      <table>
+        <thead><tr><th>المقاس</th><th>قبل العرض</th><th>سعر العرض</th></tr></thead>
+        <tbody>
+          <tr><td>20 × 30 سم</td><td class="oldFrame lockedPrice">135 جنيه</td><td class="newFrame lockedPrice">100 جنيه</td></tr>
+          <tr><td>30 × 40 سم</td><td class="oldFrame lockedPrice">200 جنيه</td><td class="newFrame lockedPrice">160 جنيه</td></tr>
+          <tr><td>40 × 50 سم</td><td class="oldFrame lockedPrice">280 جنيه</td><td class="newFrame lockedPrice">250 جنيه</td></tr>
+          <tr><td>50 × 60 سم</td><td class="oldFrame lockedPrice">350 جنيه</td><td class="newFrame lockedPrice">320 جنيه</td></tr>
+          <tr><td>50 × 70 سم</td><td class="oldFrame lockedPrice">400 جنيه</td><td class="newFrame lockedPrice">370 جنيه</td></tr>
+        </tbody>
+      </table>
+      <div class="frameOffer">🔥 عروض لفترة محدودة</div>
+    </article>
+
+  </div>
+</section>
+
+<section class="section" id="coming">
+  <div class="title">
+    <h2>خدمات <span>قريبًا</span></h2>
+    <p>خدمات جديدة يتم تجهيزها حاليًا</p>
+  </div>
+
+  <div class="coming">
+    <div class="comingCard"><div class="q">?</div><div class="cs">COMING SOON</div><h3>الألبومات</h3><div class="soonSub">قريبًا</div></div>
+    <div class="comingCard"><div class="q">?</div><div class="cs">COMING SOON</div><h3>الأفراح والمناسبات</h3><div class="soonSub">قريبًا</div></div>
+    <div class="comingCard"><div class="q">?</div><div class="cs">COMING SOON</div><h3>خدمات متكاملة</h3><div class="soonSub">قريبًا</div></div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="features">
+    <div class="feature"><div class="featureIcon">★</div><h4>جودة عالية</h4><p>نهتم بكل تفاصيل الصورة</p></div>
+    <div class="feature"><div class="featureIcon">⚡</div><h4>خدمة سريعة</h4><p>إنجاز وتسليم في أسرع وقت</p></div>
+    <div class="feature"><div class="featureIcon">🏷️</div><h4>أسعار مميزة</h4><p>عروض وأسعار مناسبة</p></div>
+    <div class="feature"><div class="featureIcon">♡</div><h4>خدمة عملاء مميزة</h4><p>نسعد دائمًا بخدمتكم</p></div>
+  </div>
+</section>
+
+<footer id="contact">
+  <div class="footer">
+    <div>
+      <div class="brand">SHARKASY<span>STUDIO</span></div>
+      <p class="desc">استوديو الشركسي<br>لحظاتك .. بصمتنا</p>
+    </div>
+
+    <div>
+      <h3>تواصل معنا</h3>
+      <a class="contact" href="tel:01060874372">📞 01060874372</a>
+      <a class="contact" href="https://wa.me/201060874372" target="_blank">💬 واتساب</a>
+      <a class="contact" href="https://www.instagram.com/sharkasy_photography?igsh=bHpxa29jbWE0eG42&igsi=bHpxa29jbWE0eG42" target="_blank">📸 Instagram: sharkasy_photography</a>
+    </div>
+
+    <div>
+      <h3>موقعنا</h3>
+      <a class="contact" href="https://maps.app.goo.gl/F2diXkmeuN9w2fE5A?g_st=aw" target="_blank">📍 اضغط لفتح الموقع</a>
+      <p class="desc">اضغط على موقعنا للوصول إلى الاستوديو</p>
+    </div>
+
+    <div>
+      <h3>مواعيد العمل</h3>
+      <div class="contact">🕐 كل يوم</div>
+      <div class="contact">⏰ من 11:30 صباحًا<br>إلى 11:00 مساءً</div>
+    </div>
+  </div>
+  <div class="bottom">🤍 نسعد بخدمتكم دائمًا</div>
+</footer>
+
+<a class="whatsapp" href="https://wa.me/201060874372" target="_blank" aria-label="واتساب">💬</a>
+
+<script>
+const menu=document.getElementById('menu');
+const nav=document.getElementById('nav');
+menu.addEventListener('click',()=>nav.classList.toggle('active'));
+document.querySelectorAll('#nav a').forEach(a=>a.addEventListener('click',()=>nav.classList.remove('active')));
+
+
+/* ===== ADMIN LOGIN ===== */
+const ADMIN_USERNAME = 'admin';
+const ADMIN_PASSWORD = 'SHARKASY@2026';
+const adminBtn = document.getElementById('adminBtn');
+const adminModal = document.getElementById('adminModal');
+const adminClose = document.getElementById('adminClose');
+const adminUser = document.getElementById('adminUser');
+const adminPass = document.getElementById('adminPass');
+const adminLogin = document.getElementById('adminLogin');
+const adminError = document.getElementById('adminError');
+
+function openAdmin(){
+  adminModal.classList.add('show');
+  adminError.textContent='';
+  setTimeout(()=>adminUser.focus(),50);
+}
+function closeAdmin(){ adminModal.classList.remove('show'); }
+function loginAdmin(){
+  if(adminUser.value.trim()===ADMIN_USERNAME && adminPass.value===ADMIN_PASSWORD){
+    sessionStorage.setItem('sharkasyAdmin','granted');
+    adminError.style.color='#7dffad';
+    adminError.textContent='✓ تم تسجيل الدخول بنجاح';
+    setTimeout(()=>{ closeAdmin(); adminError.style.color='#ff7777'; adminError.textContent=''; adminPass.value=''; },500);
+  }else{
+    adminError.style.color='#ff7777';
+    adminError.textContent='❌ اسم المستخدم أو كلمة المرور غير صحيحة';
+    adminPass.select();
+  }
+}
+adminBtn.addEventListener('click',openAdmin);
+adminClose.addEventListener('click',closeAdmin);
+adminModal.addEventListener('click',e=>{if(e.target===adminModal)closeAdmin();});
+adminLogin.addEventListener('click',loginAdmin);
+[adminUser,adminPass].forEach(el=>el.addEventListener('keydown',e=>{if(e.key==='Enter')loginAdmin();}));
+
+/* ===== SHARKASY ACCESS SYSTEM ===== */
+// غيّر هذا الكود من هنا قبل النشر إذا أردت كودًا جديدًا.
+const STUDIO_ACCESS_CODE = 'SHARKASY2026';
+const gate = document.getElementById('accessGate');
+const codeArea = document.getElementById('codeArea');
+const showCode = document.getElementById('showCode');
+const codeInput = document.getElementById('accessCode');
+const unlockBtn = document.getElementById('unlockBtn');
+const accessMsg = document.getElementById('accessMsg');
+
+showCode.addEventListener('click',()=>{
+  codeArea.classList.toggle('show');
+  if(codeArea.classList.contains('show')) codeInput.focus();
+});
+
+function unlockSite(){
+  if(codeInput.value.trim() === STUDIO_ACCESS_CODE){
+    document.body.classList.remove('locked');
+    gate.classList.add('hidden');
+    document.querySelectorAll('.lockedPrice').forEach(el=>el.classList.remove('lockedPrice'));
+    sessionStorage.setItem('sharkasyAccess','granted');
+    accessMsg.textContent='';
+  }else{
+    accessMsg.textContent='❌ الكود غير صحيح. تواصل مع إدارة الاستوديو للحصول على الكود.';
+    codeInput.select();
+  }
+}
+
+unlockBtn.addEventListener('click',unlockSite);
+codeInput.addEventListener('keydown',e=>{if(e.key==='Enter') unlockSite();});
+
+if(sessionStorage.getItem('sharkasyAccess')==='granted'){
+  document.body.classList.remove('locked');
+  gate.classList.add('hidden');
+  document.querySelectorAll('.lockedPrice').forEach(el=>el.classList.remove('lockedPrice'));
+}
+</script>
+
+</body>
+</html>
